@@ -25,7 +25,7 @@
     top: 0.5em; 
     transition: all 0.4s;
      transform: translateY(0%) rotateX(0deg) rotateZ(45deg);
-    .accordionFW__item.active &{transform: translateY(50%) rotateX(-180deg) rotateZ(45deg); border-color: body(font-color);}
+    .accordionFW__item.active>&{transform: translateY(50%) rotateX(-180deg) rotateZ(45deg); border-color: body(font-color);}
   }
   &:hover:after{border-color: body(font-color);}
 }
@@ -36,7 +36,7 @@
   transition: grid-template-rows 0.5s, padding-block 0.25s;
   padding-inline: 1em; 
   padding-block: 0; 
-  .accordionFW__item.active &{grid-template-rows: 1fr;padding-block: .5em 1.5em; }
+  .accordionFW__item.active>&{grid-template-rows: 1fr;padding-block: .5em 1.5em; }
   & p:last-child{margin-bottom: 0;}
 }
 .accordionFW__content__wrapper{overflow: hidden; position: relative;}

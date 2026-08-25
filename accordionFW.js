@@ -2,16 +2,16 @@ module.exports = function(app){
     var AccordionFW = Object.getPrototypeOf(app).AccordionFW = new app.Component("accordionFW");
     //AccordionFW.debug = true;
     AccordionFW.createdAt      = "2.0.0";
-    AccordionFW.lastUpdate     = "2.5.1";
-    AccordionFW.version        = "1.1.0";
+    AccordionFW.lastUpdate     = "2.8.0";
+    AccordionFW.version        = "1.2.0";
     // AccordionFW.factoryExclude = true;
     // AccordionFW.loadingMsg     = "This message will display in the console when component will be loaded.";
     // AccordionFW.requires       = [];
 
     AccordionFW.prototype.onCreate = function(){
         var acc = this;
-        acc.$el.find('.accordionFW__content').wrapInner('<div class="accordionFW__content__wrapper"></div>');
-        acc.$items = acc.$el.find('.accordionFW__item');
+        acc.$items = acc.$el.children('.accordionFW__item');
+        acc.$items.children('.accordionFW__content').wrapInner('<div class="accordionFW__content__wrapper"></div>');
         acc.deployall = acc.getData('deployall',false);
         acc.disable = acc.getData('disable',false);
         acc.autocollapse = acc.getData('autocollapse',false);
@@ -19,7 +19,7 @@ module.exports = function(app){
         if(acc.deployall || acc.disable)
             acc.deployItem(acc.$items);
 
-        acc.$el.find('.accordionFW__title').on('click',function(e){
+        acc.$items.children('.accordionFW__title').on('click',function(e){
             if (!$(e.target).attr('href') && !$(e.target).parent().attr('href') ){
                 if(acc.autocollapse)
                     acc.collapseItem(acc.$items.not($(this).closest('.accordionFW__item')));
