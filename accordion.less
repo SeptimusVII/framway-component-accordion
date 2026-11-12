@@ -5,14 +5,29 @@
 }
 
 .accordion{ margin-bottom: var(--spacing);
-  &:not([class*=bg-]){ background-color: color(white); .paper();}
+  padding: 0;
+  &:not([class*=bg-]){ 
+    // background-color: color(white); 
+    .paper();
+  }
   &[data-disable="true"]{.lock();}
 }
-.accordion__item{ border-bottom: 1px solid rgba(color(black),0.2);
+.accordion__item{ 
+  border-bottom: 1px solid rgba(color(black),0.2);
+  padding: 0;
   &:last-child{border-bottom: 0;}
   &.lock{.lock();}
 }
-.accordion__title{padding: 0.6em 1em; padding-right: 2.8em; cursor: pointer; position: relative; font-size: 1.1em; line-height: inherit; font-weight: inherit; margin: 0; max-width: 100%;
+.accordion__title{
+  padding: 0.6em 1em; 
+  padding-right: 2.8em; 
+  cursor: pointer; 
+  position: relative; 
+  // font-size: 1.1em; 
+  // font-weight: inherit; 
+  line-height: inherit; 
+  margin: 0; 
+  max-width: 100%;
   &:after{
     content:'';
     display: block;
